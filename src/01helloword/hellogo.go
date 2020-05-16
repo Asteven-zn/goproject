@@ -12,5 +12,8 @@ import "fmt"
 
 func main() {
 	//	fmt.Println("yangyang is a beautiful girl\ni love you!")
-	fmt.Println("洋洋是个大美女，我喜欢你!")
+	fmt.Println("大美女，我喜欢你!")
+	fmt.Println("Hello, World!")
+	fmt.Println("tom\tjack")
+	fmt.Println("beijing,shanghai,\rshenzheng")
 }
