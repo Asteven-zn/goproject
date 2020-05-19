@@ -12,7 +12,7 @@ import "fmt"
 
 func main() {
 	//	fmt.Println("yangyang is a beautiful girl\ni love you!")
-	fmt.Println("大美女，我喜欢你!")
+	fmt.Println("我喜欢golang!")
 	fmt.Println("Hello, World!")
 	fmt.Println("tom\tjack")
 	fmt.Println("beijing,shanghai,\rshenzheng")
