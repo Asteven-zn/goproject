@@ -11,7 +11,8 @@ func main() {
 	//2. ptr 的类型 *int
 	//3. ptr 本身的字&i
 	var ptr *int = &i
-	fmt.Printf("ptr=%v\n",ptr)
+	fmt.Printf("ptr 存储的是i的地址=%v\n",ptr)
+	fmt.Printf("ptr 的类型=%T\n",ptr)
 	fmt.Printf("ptr 的地址=%v\n",&ptr)
 	fmt.Printf("prt 指向的值=%v",*ptr)
 }
