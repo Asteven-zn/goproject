@@ -21,4 +21,10 @@ func main()  {
 	fmt.Printf("array1 = %d, type of array1 :%T\n", array1, array1)
 	fmt.Printf("array2 = %d, type of array2 :%T\n", array2, array2)
 	fmt.Printf("array3 = %v, type of array3 :%T\n", array3, array3)
+
+
+	fmt.Println("###使用指定索引值的方式来初始化数组")
+	a := [...]int{1: 1, 3: 5}
+	fmt.Println(a)                  // [0 1 0 5]
+	fmt.Printf("type of a:%T\n", a) //type of a:[4]int
 }
