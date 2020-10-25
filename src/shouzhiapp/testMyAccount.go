@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main()  {
+func main() {
 
 	//声明一个变量，保存接收用户输入的选项
 	key := ""
@@ -15,6 +15,8 @@ func main()  {
 	money := 0.0
 	//每次收支的说明
 	note := ""
+	//定义个字段，记录是否有收支的行为
+	flag := false
 	//收支的详情，使用字符串来记录
 	//当有收支时，只需要对details进行拼接处理即可
 	details := "收支\t账户金额\t收支金额\t说	明"
@@ -33,16 +35,21 @@ func main()  {
 		switch key {
 		case "1":
 			fmt.Println("*****************当前收支明细*****************")
-			fmt.Println(details)
+			if flag {
+				fmt.Println(details)
+			} else {
+				fmt.Println("当前没有收支明细明细，，，来一笔吧！")
+			}
 		case "2":
 			fmt.Println("本次收入金额：")
 			fmt.Scanln(&money)
-			balance += money  //修改账户余额
+			balance += money //修改账户余额
 			fmt.Println("本次收入说明：")
 			fmt.Scanln(&note)
 			//将本次收入情况，拼接到details变量
 			//收入   11000      1000    有人发红包
 			details += fmt.Sprintf("\n收入\t%v\t%v\t%v", balance, money, note)
+			flag = true
 		case "3":
 			fmt.Println("*****************登记支出********************")
 			fmt.Println("本次支出金额：")
@@ -52,12 +59,13 @@ func main()  {
 				fmt.Println("账户余额不足")
 				break
 			}
-			balance -= money  //修改账户余额
+			balance -= money //修改账户余额
 			fmt.Println("本次支出说明：")
 			fmt.Scanln(&note)
 			//将本次支出情况，拼接到details变量
 			//支出   11000      1000    吃饭
 			details += fmt.Sprintf("\n支出\t%v\t%v\t%v", balance, money, note)
+			flag = true
 		case "4":
 			fmt.Println("你确定要退出吗？y/n")
 			choice := ""
@@ -68,7 +76,9 @@ func main()  {
 				}
 				fmt.Println("你输入的有误，请重新输入 y/n")
 			}
-			loop = false
+			if choice == "y" {
+				loop = false
+			}
 		default:
 			fmt.Println("*****************请收入正确选项***************")
 		}
